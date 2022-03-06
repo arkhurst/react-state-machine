@@ -9,7 +9,7 @@ function App() {
   const [toggleButton, setToggleButton] = React.useState(false);
   const [current, send] = useMachine(trafficLightMachine);
 
-  const handleHandleNext = React.useCallback(() => {
+  const handleNext = React.useCallback(() => {
     interval = setInterval(() => {
       send("NEXT");
     }, 2000);
@@ -17,8 +17,8 @@ function App() {
 
   const handleHandleStart = React.useCallback(() => {
     setToggleButton(false);
-    handleHandleNext();
-  }, [handleHandleNext]);
+    handleNext();
+  }, [handleNext]);
 
   const handleStop = React.useCallback(() => {
     setToggleButton(true);
@@ -26,11 +26,11 @@ function App() {
   }, []);
 
   React.useEffect(() => {
-    handleHandleNext();
+    handleNext();
     return () => {
       handleStop();
     };
-  }, [handleHandleNext, handleStop]);
+  }, [handleNext, handleStop]);
 
   return (
     <React.Fragment>
