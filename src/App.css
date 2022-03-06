@@ -5,39 +5,48 @@ body {
   align-items: center;
 }
 
-.traffic-light-container {
-  background-color: #282c34;
-  border-radius: 15px;
+.traffic-light {
+  border-radius: 20px;
+  background-color: #171717;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
 }
 
 .light {
   width: 70px;
   height: 70px;
-  border-radius: 35px;
+  border-radius: 100%;
   margin-bottom: 10px;
   opacity: 0.5;
 }
 
-.red {
-  background-color: #dc2626;
-}
-
 .yellow {
-  background-color: #fde047;
+  background-color: #facc15;
 }
 
 .green {
-  background-color: #22c55e;
+  background-color: #16a34a;
 }
 
-.input {
+.red {
+  background-color: #ef4444;
+}
+
+button {
+  padding: 4px;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  cursor: pointer;
+}
+input {
   appearance: none;
 }
 
 input:checked {
-  opacity: 1.5;
+  opacity: 1;
 }
